@@ -1,0 +1,48 @@
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Ll]ogs/
+[Bb]in/
+[Oo]bj/
+[Tt]emp/
+[Ll]ibrary/
+[Uu]serSettings/
+[Uu]nityGenerated/
+[Oo]ut/
+[Hh]tml/
+[Mm]ac/
+[Ww]indows/
+[Ll]inux/
+[Ww]ebGL/
+[Tt]estResult/
+
+
+# Rider files
+.idea/
+*.sln
+*.suo
+*.user
+*.userprefs
+
+# JetBrains Rider settings
+.idea/
+
+# Unity specific files
+*.pidb.meta
+*.sublime-workspace
+*.sublime-project
+*.tmp
+
+# Other IDE files
+*.userprefs
+
+# Cache files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]ut/
+[Pp]rojectSettings/EditorBuildSettings.asset
+
+# Asset Store tools
+[Aa]sset[Aa]ssets/
+[Aa]sset[Aa]sets/
+[Aa]sset[Aa]sets
