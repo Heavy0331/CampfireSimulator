@@ -1,3 +1,5 @@
+using NUnit.Framework.Constraints;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -50,6 +52,8 @@ public class PlayerController : MonoBehaviour
         {
             velocity.y = Mathf.Sin(Time.deltaTime * Mathf.PI);  
         }
+
+
     }
 
     /* both of these methods are probably not gonna be used except if the player somwhow doesn't realize stepping in fire is dangerous */

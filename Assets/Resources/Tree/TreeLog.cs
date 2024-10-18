@@ -1,10 +1,13 @@
-using NUnit.Framework;
+using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class TreeLog : MonoBehaviour
 {
     public GameObject log;
+    private Camera playerCamera;
     public int logCount = 5;
     [Tooltip("The Scale at which the RNG will spread out logs")]
     [SerializeField] private float randScale = 1.0f;
@@ -19,14 +22,14 @@ public class TreeLog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        switch (Input.inputString)
         {
-            HarvestLog();
-        }
-        
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Reset();
+            case "e":
+                HarvestLog();
+                break;
+            case "r":
+                Reset();
+                break;
         }
     }
 
@@ -34,9 +37,14 @@ public class TreeLog : MonoBehaviour
     {
         if (logCount > 0)
         {
-            float randNumber = Random.value * (float)3.75;
-            Vector3 randPosition = new Vector3(transform.position.x * randNumber, transform.position.y, transform.position.z * randNumber);
-            GameObject createdLog = Instantiate(log, transform.position, Quaternion.identity);
+            // place the tree logs somewhere around the tree in a random offset
+            float randAngle = Random.Range(0f, 2f * Mathf.PI);
+            float randDistance = Random.Range(0f, randScale);
+
+            float offsetX = randDistance * Mathf.Cos(randAngle);
+            float offsetZ = randDistance * Mathf.Sin(randAngle);
+            Vector3 randPosition = new Vector3(transform.position.x + offsetX, transform.position.y, transform.position.z + offsetZ);
+            GameObject createdLog = Instantiate(log, randPosition, Quaternion.identity);
             spawnedLogs.Add(createdLog);
 
             // decrement the log count
@@ -59,4 +67,21 @@ public class TreeLog : MonoBehaviour
 
         spawnedLogs.Clear();
     }
+
+    private bool IsLookingAtLog()
+    {
+        Camera playerCamera = Camera.main;
+        Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.transform == log.transform)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
