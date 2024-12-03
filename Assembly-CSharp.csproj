@@ -61,13 +61,14 @@
     <Analyzer Include="C:\Users\PSD-PM\Documents\NewUnity\6000.0.29f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\PauseMenu.cs" />
-    <Compile Include="Assets\EnemyController.cs" />
-    <Compile Include="Assets\Campfire.cs" />
-    <Compile Include="Assets\PlayerController.cs" />
-    <Compile Include="Assets\MouseLook.cs" />
+    <Compile Include="Assets\Scenes\SampleScene\ImageTools.cs" />
+    <Compile Include="Assets\Scripts\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\Scripts\Campfire.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\RandomLogSpawner.cs" />
     <Compile Include="Assets\Resources\Tree\TreeLog.cs" />
-    <Compile Include="Assets\Scenes\SampleScene\RotateImage.cs" />
+    <Compile Include="Assets\Scripts\PauseMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
