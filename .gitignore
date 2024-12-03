@@ -16,17 +16,6 @@
 [Ww]ebGL/
 [Tt]estResult/
 
-
-# Rider files
-.idea/
-*.sln
-*.suo
-*.user
-*.userprefs
-
-# JetBrains Rider settings
-.idea/
-
 # Unity specific files
 *.pidb.meta
 *.sublime-workspace
@@ -46,3 +35,4 @@
 [Aa]sset[Aa]ssets/
 [Aa]sset[Aa]sets/
 [Aa]sset[Aa]sets
+/.vs/Campfire Simulator
