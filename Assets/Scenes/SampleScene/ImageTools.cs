@@ -1,17 +1,17 @@
 using UnityEngine;
 
-public class RotateImage : MonoBehaviour
+public class ImageTools : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public static void RotateImage(Texture2D tex, float angleDegrees)
@@ -50,3 +50,4 @@ public class RotateImage : MonoBehaviour
 
         System.Buffers.ArrayPool<Color32>.Shared.Return(copy);
     }
+}
