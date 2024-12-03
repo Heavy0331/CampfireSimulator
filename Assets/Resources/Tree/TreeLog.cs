@@ -35,7 +35,7 @@ public class TreeLog : MonoBehaviour
 
     private void HarvestLog()
     {
-        if (logCount > 0)
+        if (logCount > 0 && IsLookingAtLog())
         {
             // place the tree logs somewhere around the tree in a random offset
             float randAngle = Random.Range(0f, 2f * Mathf.PI);
